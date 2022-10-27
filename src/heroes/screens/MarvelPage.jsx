@@ -1,6 +1,9 @@
+import { CardApp } from "../../shared"
 
 export const MarvelPage = () => {
   return (
-    <div>MaverlPage</div>
+  <CardApp title='Marvel' subTitle='Super Heroes del mundo de Marvel'>
+    <p>Hola mundo Marvel</p>
+  </CardApp>
   )
 }

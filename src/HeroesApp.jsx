@@ -4,7 +4,6 @@ import { NavBar } from "./shared"
 export const HeroesApp = () => {
   return (
     <>
-      <NavBar/>
       <AppRouter />
     </>
   )
