@@ -47,12 +47,14 @@ export const SearchPage = () => {
         <div className="col-7">
           <h4>Resultados</h4>
           <hr />
-          <div className="alert alert-info">
-            hero
-          </div>
-          <div className="alert alert-danger">
-            No se encontro <b>{q}</b>
-          </div>
+          {
+            (q === '')
+            ? <div className="alert alert-info">Search a hero</div>
+            : (heroes.length === 0) && <div className="alert alert-danger">No se encontro <b>{q}</b></div>
+          }
+          
+
+          
           {
             heroes.map(heroe =>(
               <HeroCard key={heroe.id} {...heroe}/>
