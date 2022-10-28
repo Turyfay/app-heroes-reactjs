@@ -21,7 +21,7 @@ export const HeroCard = ({
 
 
     return (
-        <div className='col animate__animated animate__fadeIn'>
+        <div className='col animate__animated animate__fadeInUp mt-2'>
             <div className="card">
                 <div className="row no-gutters">
                     <div className="col-4 ">

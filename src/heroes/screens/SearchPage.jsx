@@ -5,6 +5,7 @@ import { CardApp } from "../../shared/components/CardApp"
 import queryString from 'query-string';
 
 import { HeroCard } from "../components/HeroCard"
+import { getHeroeByName } from "../../helpers";
 
 export const SearchPage = () => {
 
@@ -13,6 +14,7 @@ export const SearchPage = () => {
 
 
   const {q = ''} = queryString.parse(location.search);
+  const heroes = getHeroeByName(q);
 
   const {searchText,onInputChange,onResetForm} = useForm({
     searchText: ''
@@ -51,8 +53,11 @@ export const SearchPage = () => {
           <div className="alert alert-danger">
             No se encontro <b>{q}</b>
           </div>
-          {/* <HeroCard/> */}
-
+          {
+            heroes.map(heroe =>(
+              <HeroCard key={heroe.id} {...heroe}/>
+            ))
+          }
         </div>
       </div>
     </CardApp>
